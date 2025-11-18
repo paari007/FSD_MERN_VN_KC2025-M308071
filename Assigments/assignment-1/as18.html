@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Dashboard Layout</title>
+</head>
+<style>
+  body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+}
+
+.dashboard {
+  display: grid;
+
+  /* 3 columns: Sidebar (1fr) | Main content (2fr) | Widgets (1fr) */
+  grid-template-columns: 1fr 2fr 1fr;
+
+  /* 3 rows: header | content | footer */
+  grid-template-rows: 70px auto 60px;
+
+  height: 100vh;
+}
+
+/* Section placement */
+.header {
+  grid-column: 1 / 4;   /* Full width */
+  background: #4A90E2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+}
+
+.sidebar {
+  background: #2D3E50;
+  color: white;
+  padding: 20px;
+}
+
+.main-content {
+  background: white;
+  padding: 20px;
+}
+
+.widgets {
+  background: #E8EEF3;
+  padding: 20px;
+}
+
+.footer {
+  grid-column: 1 / 4;   /* Full width */
+  background: #4A90E2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+</style>
+<body>
+
+  <div class="dashboard">
+
+    <header class="header">Header</header>
+
+    <aside class="sidebar">Sidebar</aside>
+
+    <main class="main-content">Main Content</main>
+
+    <div class="widgets">Widget Panel</div>
+
+    <footer class="footer">Footer</footer>
+
+  </div>
+
+</body>
+</html>

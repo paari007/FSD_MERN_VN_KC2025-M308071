@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Responsive Navigation</title>
+</head>
+<style>
+  /* Base Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background: #333; /* Default desktop background */
+  padding: 10px;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;        /* Horizontal by default */
+  justify-content: center;
+  gap: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+
+/* ---------------------------------------
+   Mobile ( <= 768px ) - Vertical Menu
+---------------------------------------- */
+@media (max-width: 768px) {
+  .navbar {
+    background: #222; /* Darker for mobile */
+  }
+
+  .navbar ul {
+    flex-direction: column;   /* Stack vertically */
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+/* ---------------------------------------------------
+   Medium Screens (768px–1024px) - New Background Color
+---------------------------------------------------- */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .navbar {
+    background: #555;  /* Medium breakpoint color */
+  }
+}
+
+</style>
+<body>
+
+<nav class="navbar">
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+</body>
+</html>

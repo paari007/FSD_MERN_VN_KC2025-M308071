@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Positioning Example</title>
+
+  <style>
+    /* Basic styling for all boxes */
+    .box {
+      width: 150px;
+      height: 150px;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px;
+    }
+
+    /* NORMAL (static) box */
+    .static-box {
+      background: #7f8c8d;
+      position: static; /* default */
+    }
+
+    /* RELATIVE BOX → move 20px right & 20px down */
+    .relative-box {
+      background: #3498db;
+      position: relative;
+      top: 20px;
+      left: 20px;
+    }
+
+    /* ABSOLUTE BOX placed bottom-right inside parent */
+    .absolute-parent {
+      width: 400px;
+      height: 300px;
+      border: 2px dashed #333;
+      margin: 30px;
+      position: relative; /* required */
+    }
+
+    .absolute-box {
+      background: #e67e22;
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      bottom: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* FIXED BOX → stuck to bottom-left while scrolling */
+    .fixed-box {
+      background: #2ecc71;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+    }
+
+    /* Add height so scrolling can be tested */
+    .content {
+      height: 1500px;
+      background: #ecf0f1;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Static box (normal flow) -->
+  <div class="box static-box">Static</div>
+
+  <!-- Relative box (shifted 20px) -->
+  <div class="box relative-box">Relative</div>
+
+  <!-- Absolute positioned box inside parent -->
+  <div class="absolute-parent">
+    <div class="absolute-box">Absolute</div>
+  </div>
+
+  <!-- Fixed box (attached to screen) -->
+  <div class="box fixed-box">Fixed</div>
+
+  <div class="content">
+    Scroll to see fixed box stay in place.
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,400 @@
+/* ====================================
+   0. Global Styles & Variables
+   ==================================== */
+:root {
+    /* Define your custom color scheme (minimum 3-4 colors) */
+    --primary-color: #007bff; /* Blue */
+    --secondary-color: #6c757d; /* Gray */
+    --accent-color: #28a745; /* Green */
+    --background-color: #f8f9fa; /* Light Gray */
+    --text-color: #343a40; /* Dark Gray */
+
+    /* Custom Fonts */
+    --heading-font: 'Poppins', sans-serif;
+    --body-font: 'Roboto Mono', monospace;
+}
+
+* {
+    /* Apply Box Model consistently */
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--body-font);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+    margin-bottom: 0.5em;
+}
+
+/* Base Styles for Buttons/Links */
+.cta-button,
+a:not(.nav-links a) {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px; /* Border-radius */
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover,
+a:not(.nav-links a):hover {
+    background-color: var(--accent-color);
+}
+
+/* ====================================
+   1. Header & Navigation (Fixed/Sticky & Flexbox)
+   ==================================== */
+.sticky-nav {
+    /* Positioning: Sticky Navigation */
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+    
+    background-color: white;
+    padding: 15px 5%;
+    border-bottom: 1px solid #ddd;
+    
+    /* Flexbox Implementation 1: Navigation Layout */
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex; /* Flexbox for horizontal links */
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.nav-links a.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+
+/* ====================================
+   2. Home Page Sections
+   ==================================== */
+main {
+    padding: 20px 5%;
+}
+
+section {
+    padding: 40px 0;
+    margin-bottom: 20px;
+}
+
+/* Flexbox Implementation 2: Hero Section */
+.hero-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-image-container {
+    flex: 1;
+    text-align: center;
+}
+
+.profile-photo {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%; /* Border-radius */
+    /* Box Shadow Example */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+/* Skills section - Example using CSS Grid (can be Flexbox too) */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.skill-card {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    background-color: white;
+}
+
+/* ====================================
+   3. Projects Page (CSS Grid)
+   ==================================== */
+
+/* CSS Grid Implementation: Project Gallery */
+.project-grid {
+    display: grid;
+    /* Default for Desktop - 3 columns */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.project-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    /* Box Shadow Example */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    margin: 15px 15px 5px;
+}
+
+.project-card p {
+    padding: 0 15px 10px;
+    font-size: 0.9em;
+}
+
+.tech-list {
+    list-style: none;
+    padding: 0 15px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech-list li {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+}
+
+/* Table Styling */
+.project-table-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.project-table-section th, .project-table-section td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.project-table-section th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 700;
+}
+
+/* ====================================
+   4. Contact Page (Form Styling)
+   ==================================== */
+.contact-form {
+    max-width: 600px;
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    /* Box Model Demonstration: Padding, Border */
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+/* ====================================
+   5. Footer
+   ==================================== */
+footer {
+    background-color: var(--text-color);
+    color: white;
+    padding: 20px 5%;
+    text-align: center;
+}
+
+.footer-links, .social-links {
+    margin-top: 10px;
+}
+
+footer a {
+    color: var(--accent-color);
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+/* ====================================
+   6. Responsive Design (Media Queries)
+   ==================================== */
+
+/* --- TABLET BREAKPOINT (768px to 1024px) --- */
+@media (max-width: 1024px) {
+    /* Adjustments for Tablet */
+    
+    .project-grid {
+        /* Tablet: 2 columns */
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px;
+    }
+
+    .hero-section {
+        /* Stack the hero elements */
+        flex-direction: column; 
+        text-align: center;
+    }
+
+    .profile-photo {
+        width: 200px;
+        height: 200px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+}
+
+/* --- MOBILE BREAKPOINT (Less than 768px) --- */
+@media (max-width: 768px) {
+    /* Mobile-friendly Navigation Conversion */
+    .sticky-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 10px;
+    }
+
+    .nav-links {
+        /* Converts to mobile-friendly vertical layout */
+        flex-direction: column; 
+        width: 100%;
+        margin-top: 10px;
+        gap: 5px;
+    }
+    
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 10px;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+    }
+
+    /* Adjust Grid/Flex layouts */
+    .project-grid {
+        /* Mobile: 1 column */
+        grid-template-columns: 1fr; 
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    /* Font sizes scale appropriately */
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    /* Padding and margins adjust */
+    main {
+        padding: 10px 5%;
+    }
+    
+    .project-table-section table, 
+    .project-table-section thead, 
+    .project-table-section tbody, 
+    .project-table-section th, 
+    .project-table-section td, 
+    .project-table-section tr {
+        /* Optional: Make the table responsive by stacking headers */
+        display: block;
+    }
+
+    .project-table-section thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .project-table-section td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%; 
+    }
+
+    .project-table-section td:before {
+        /* Use table headers as labels in mobile view */
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+        /* Map data-label to content for each column */
+        /* You would need to add data-label attributes to your HTML <td> elements for this to work fully. */
+    }
+}

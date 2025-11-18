@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sticky Sidebar Layout</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+  body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+}
+
+/* Sticky Sidebar */
+.sticky-sidebar {
+  width: 200px;
+  background-color: #f0f0f0;
+  padding: 20px;
+
+  /* Sticky behavior */
+  position: sticky;
+  top: 0; /* Required for sticky to work */
+
+  height: 100vh;
+  border-right: 3px dashed #aaa; /* Style difference */
+}
+
+/* Main Content */
+.content {
+  padding: 20px;
+  flex: 1;
+  background-color: #ffffff;
+}
+
+/* Optional: Demonstrating FIXED positioning */
+.fixed-example {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: yellow;
+  padding: 10px;
+  border: 2px solid black;
+}
+
+</style>
+<body>
+
+  <!-- Sticky Sidebar -->
+  <aside class="sticky-sidebar">
+    <h2>Sticky Sidebar</h2>
+    <p>This sidebar uses <strong>position: sticky</strong>.</p>
+    <p>It stays visible while scrolling but only within its container.</p>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+    <h1>Main Content Area</h1>
+    <p>This section scrolls normally.</p>
+
+    <!-- LOTS OF CONTENT TO ENABLE SCROLLING -->
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Scroll down to see the sidebar behavior...</p>
+    <br><br><br><br><br><br>
+
+    <h2>Difference Between Fixed & Sticky</h2>
+    <ul>
+      <li><strong>Sticky</strong> = Moves with scroll until its boundary is reached.</li>
+      <li><strong>Fixed</strong> = Always stays in the same place on the screen.</li>
+    </ul>
+  </main>
+
+</body>
+</html>
